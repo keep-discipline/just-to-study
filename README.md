@@ -1,2 +1,2 @@
 # just-to-study
-wish everyone keep self-disciplined
+Wish everyone keep self-disciplined
