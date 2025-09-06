@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML标签与属性综合演示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        section {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML标签与属性综合演示</h1>
+        <nav>
+            <ul>
+                <li><a href="#text">文本标签</a></li>
+                <li><a href="#media">媒体标签</a></li>
+                <li><a href="#forms">表单元素</a></li>
+                <li><a href="#tables">表格</a></li>
+                <li><a href="#semantic">语义化标签</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="text">
+        <h2>1. 文本相关标签</h2>
+        
+        <h3>标题标签 (h1-h6)</h3>
+        <h1>h1 标题 (最重要)</h1>
+        <h2>h2 标题</h2>
+        <h3>h3 标题</h3>
+        <h4>h4 标题</h4>
+        <h5>h5 标题</h5>
+        <h6>h6 标题 (最不重要)</h6>
+        
+        <h3>段落与文本格式</h3>
+        <p>这是一个普通的段落。<strong>这段文字是加粗的</strong>，<em>这段文字是斜体的</em>，<u>这段文字有下划线</u>。</p>
+        
+        <p><span class="highlight">span标签用于对行内元素分组</span>，<code>code标签用于显示代码: var x = 10;</code></p>
+        
+        <pre>pre标签保留格式
+            包括空格
+            和换行</pre>
+        
+        <blockquote cite="https://example.com">
+            blockquote标签用于引用，通常会有缩进效果。这是引用内容。
+        </blockquote>
+    </section>
+
+    <section id="media">
+        <h2>2. 媒体标签</h2>
+        
+        <h3>图片标签 (img)</h3>
+        <img src="https://via.placeholder.com/400x200" alt="占位图片" width="400" height="200" title="鼠标悬停显示的文字">
+        <p>alt属性在图片无法显示时展示替代文本，title属性是悬停提示</p>
+        
+        <h3>音频标签 (audio)</h3>
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            您的浏览器不支持音频元素。
+        </audio>
+        
+        <h3>视频标签 (video)</h3>
+        <video width="400" controls poster="https://via.placeholder.com/400x200">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            您的浏览器不支持视频元素。
+        </video>
+        <p>poster属性指定视频加载前的封面图</p>
+    </section>
+
+    <section id="forms">
+        <h2>3. 表单元素</h2>
+        
+        <form action="/submit" method="POST">
+            <fieldset>
+                <legend>用户信息</legend>
+                
+                <label for="username">用户名:</label>
+                <input type="text" id="username" name="username" placeholder="输入用户名" required><br><br>
+                
+                <label for="email">邮箱:</label>
+                <input type="email" id="email" name="email" placeholder="输入有效邮箱"><br><br>
+                
+                <label for="password">密码:</label>
+                <input type="password" id="password" name="password" minlength="6"><br><br>
+                
+                <label for="age">年龄:</label>
+                <input type="number" id="age" name="age" min="18" max="99" value="25"><br><br>
+                
+                <label for="color">喜欢的颜色:</label>
+                <input type="color" id="color" name="color" value="#ff0000"><br><br>
+                
+                <label for="birthday">生日:</label>
+                <input type="date" id="birthday" name="birthday"><br><br>
+                
+                <label for="avatar">上传头像:</label>
+                <input type="file" id="avatar" name="avatar" accept="image/*"><br><br>
+            </fieldset>
+            
+            <fieldset>
+                <legend>其他信息</legend>
+                
+                <label>性别:</label>
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">男</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">女</label><br><br>
+                
+                <label>兴趣爱好:</label>
+                <input type="checkbox" id="sports" name="interests" value="sports">
+                <label for="sports">运动</label>
+                <input type="checkbox" id="music" name="interests" value="music" checked>
+                <label for="music">音乐</label>
+                <input type="checkbox" id="reading" name="interests" value="reading">
+                <label for="reading">阅读</label><br><br>
+                
+                <label for="country">国家:</label>
+                <select id="country" name="country">
+                    <option value="">--请选择--</option>
+                    <option value="china" selected>中国</option>
+                    <option value="usa">美国</option>
+                    <option value="uk">英国</option>
+                </select><br><br>
+                
+                <label for="bio">个人简介:</label><br>
+                <textarea id="bio" name="bio" rows="4" cols="50" placeholder="介绍一下你自己..."></textarea><br><br>
+            </fieldset>
+            
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+            <button type="button" onclick="alert('这是一个普通按钮')">普通按钮</button>
+        </form>
+    </section>
+
+    <section id="tables">
+        <h2>4. 表格</h2>
+        
+        <table>
+            <caption>学生成绩表</caption>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>学号</th>
+                    <th>语文</th>
+                    <th>数学</th>
+                    <th>英语</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td>1001</td>
+                    <td>85</td>
+                    <td>90</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>1002</td>
+                    <td>78</td>
+                    <td>92</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>王五</td>
+                    <td>1003</td>
+                    <td>90</td>
+                    <td colspan="2">缺考</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">平均分</td>
+                    <td>84.3</td>
+                    <td>91</td>
+                    <td>86.5</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p>colspan属性用于合并列，rowspan属性(未展示)用于合并行</p>
+    </section>
+
+    <section id="semantic">
+        <h2>5. 语义化标签</h2>
+        
+        <article>
+            <h3>article标签</h3>
+            <p>表示独立的自包含内容，如新闻文章、博客帖子等。</p>
+            <time datetime="2023-10-15">2023年10月15日</time>
+        </article>
+        
+        <aside>
+            <h3>aside标签</h3>
+            <p>表示与周围内容相关但不是主要内容的部分，如侧边栏、引用等。</p>
+        </aside>
+        
+        <details>
+            <summary>点击查看详情 (details/summary标签)</summary>
+            <p>details和summary标签配合使用可以创建可折叠的内容区域。</p>
+        </details>
+        
+        <figure>
+            <img src="https://via.placeholder.com/300x150" alt="示例图片">
+            <figcaption>figure和figcaption标签用于为图片添加标题说明</figcaption>
+        </figure>
+        
+        <progress value="75" max="100"></progress>
+        <p>progress标签显示任务进度，当前75%</p>
+    </section>
+
+    <footer>
+        <p>© 2023 HTML演示页面 | 
+            <a href="mailto:contact@example.com">联系我们</a> | 
+            <a href="tel:+8613800138000">电话联系</a>
+        </p>
+        <address>
+            地址: 北京市海淀区某某路123号
+        </address>
+    </footer>
+</body>
+</html>
